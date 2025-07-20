@@ -1,28 +1,33 @@
-import { useState } from 'react'
+import { Gear, Play, Stop } from "@phosphor-icons/react";
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <div>
-      <div className="title-bar">
+    <div className="app-container h-100 w-100 shadow-md">
+      <div className="title-bar py-2 z-3">
 
       </div>
-      <div>
-        
+      <div className="app-window h-100 w-100 pe-2" style={{ paddingTop: "2.125rem"}}>
+        <div className="d-flex">
+          <button className="btn ms-auto">
+            <Gear size={28} color="#fff" />
+          </button>
+        </div>
+        <div className="d-flex flex-column justify-content-center align-items-center">
+          <h1 className="text-white" style={{ fontSize: "6rem" }}>30:00</h1>
+          <div>
+            <button className="btn me-2">
+              {/* <Pause size={32} color="#fff" /> */}
+              <div className="p-2 bg-success rounded-circle">
+                <Play size={48} color="#fff" />
+              </div>
+            </button>
+            <button className="btn">
+              <Stop size={48} color="#fff" />
+            </button>
+          </div>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </div>
   )
 }
